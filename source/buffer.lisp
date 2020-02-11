@@ -23,11 +23,10 @@ title into accound as it may vary from one load to the next."
 (defmethod object-string ((buffer buffer))
   (format nil "~a  ~a" (url buffer) (title buffer)))
 
-(define-command make-buffer (&key (title "default")
-                                  modes)
+(define-command make-buffer (&key (title "default") modes)
   "Create a new buffer.
-MODES is a list of mode symbols."
-  (rpc-buffer-make :title title :default-modes modes))
+   MODES is a list of mode symbols."
+  (ipc-buffer-make *interface* :title title :default-modes modes))
 
 (define-deprecated-command new-buffer ()
   "Deprecated by `make-buffer'."
