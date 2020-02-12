@@ -23,8 +23,8 @@
                        :documentation "The stack of currently active minibuffers.")
    (status-buffer :accessor status-buffer
                   :initform (make-minibuffer)
-                  :documentation "Buffer for displaying information such as
-current URL or event messages.")
+                  :documentation "Buffer for displaying information
+                  such as current URL or event messages.")
    (status-buffer-height :accessor status-buffer-height :initform 24
                          :type integer
                          :documentation "The height of the status buffer in pixels.")
@@ -58,20 +58,21 @@ current URL or event messages.")
                    :initform "socks5://127.0.0.1:9050"
                    :type string
                    :documentation "The address of the proxy server.
-It's made of three components: protocol, host and port.
-Example:
-  http://192.168.1.254:8080")
+                   It's made of three components: protocol, host and port.
+                   Example:
+                   http://192.168.1.254:8080")
    (whitelist :accessor whitelist :initarg :whitelist
               :initform '("localhost" "localhost:8080")
               :type list-of-strings
-              :documentation "A list of URI not to forward to the proxy.
-It must be a list of strings.")
+              :documentation "A list of URI not to forward to the
+              proxy. It must be a list of strings.")
    (proxied-downloads-p :accessor proxied-downloads-p :initarg :proxied-downloads-p
                         :initform t
-                        :documentation "Non-nil if downloads should also use
-the proxy."))
-  (:documentation "Enable forwarding of all network requests to a specific host.
-This can apply to specific buffer."))
+                        :documentation "Non-nil if downloads should
+                        also use the proxy."))
+  (:documentation "Enable forwarding of all network requests to a
+                   specific host. This can apply to specific
+                   buffer."))
 
 (define-class-type proxy)
 (declaim (type (proxy-type) *proxy-class*))
