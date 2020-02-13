@@ -118,7 +118,7 @@ URL is first transformed by `parse-url', then by BUFFER's `load-hook'."
       (error (c)
         (log:error "In `load-hook': ~a" c)))
     (setf (url buffer) url)
-    (rpc-buffer-load buffer url)))
+    (ipc-buffer-load buffer url)))
 
 @export
 (defun set-url-to-buffer (input-url &key new-buffer-p)
